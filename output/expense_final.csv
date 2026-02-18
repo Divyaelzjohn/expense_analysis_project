@@ -1,0 +1,5 @@
+id,date,category,amount,description,month
+1,2026-02-01,Food,500.0,Lunch,2
+2,2026-02-02,Transport,200.0,Bus,2
+3,2026-02-03,Shopping,1500.0,Clothes,2
+4,2026-02-05,Food,300.0,Dinner,2
