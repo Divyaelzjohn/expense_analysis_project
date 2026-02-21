@@ -24,3 +24,25 @@ def home(request):
         "expenses": expenses,
         "total": total
     })
+
+
+from django.shortcuts import get_object_or_404
+
+def edit_expense(request, id):
+    expense = get_object_or_404(Expense, id=id)
+
+    if request.method == "POST":
+        expense.date = request.POST.get("date")
+        expense.category = request.POST.get("category")
+        expense.amount = request.POST.get("amount")
+        expense.description = request.POST.get("description")
+        expense.save()
+        return redirect("home")
+
+    return render(request, "expenses/edit.html", {"expense": expense})
+
+
+def delete_expense(request, id):
+    expense = get_object_or_404(Expense, id=id)
+    expense.delete()
+    return redirect("home")

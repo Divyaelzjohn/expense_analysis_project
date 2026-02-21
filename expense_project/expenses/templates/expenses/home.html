@@ -32,6 +32,10 @@
             <td>{{ expense.category }}</td>
             <td>{{ expense.amount }}</td>
             <td>{{ expense.description }}</td>
+            <td>
+            <a href="{% url 'edit' expense.id %}">Edit</a>
+            <a href="{% url 'delete' expense.id %}">Delete</a>
+        </td>
         </tr>
         {% endfor %}
     </table>
