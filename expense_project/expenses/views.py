@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import Expense
 from django.db.models import Sum
+from django.shortcuts import get_object_or_404
 
 # Create your views here.
 def home(request):
@@ -24,9 +25,6 @@ def home(request):
         "expenses": expenses,
         "total": total
     })
-
-
-from django.shortcuts import get_object_or_404
 
 def edit_expense(request, id):
     expense = get_object_or_404(Expense, id=id)
